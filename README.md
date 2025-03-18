@@ -14,6 +14,7 @@ This project is a note-taking application built with React and Firebase, develop
 - Delete notes
 - Responsive design using Tailwind CSS and DaisyUI
 - Modern UI with animations
+- Containerized with Docker for easy deployment
 
 ## Technologies Used
 
@@ -24,15 +25,11 @@ This project is a note-taking application built with React and Firebase, develop
 - DaisyUI
 - React Icons
 - React Type Animation
-
-## Firebase Integration
-
-The application uses the following Firebase services:
-
-- Firestore Database for data persistence
-- Firebase Analytics for usage tracking
+- Docker & Docker Compose
 
 ## Project Setup
+
+### Standard Setup
 
 1. Clone the repository:
 
@@ -66,6 +63,44 @@ const firebaseConfig = {
 npm run dev
 ```
 
+### Docker Setup
+
+1. Make sure Docker Desktop is installed and running
+
+2. Build and run with Docker Compose:
+
+```bash
+docker-compose up -d
+```
+
+3. Access the application at `http://localhost:80`
+
+4. To stop the container:
+
+```bash
+docker-compose down
+```
+
+### Docker Commands Reference
+
+- Rebuild and restart the container:
+
+```bash
+docker-compose up -d --build
+```
+
+- View container logs:
+
+```bash
+docker logs react-noteapp-firebase
+```
+
+- Stop and remove containers:
+
+```bash
+docker-compose down
+```
+
 ## Project Structure
 
 ```
@@ -76,7 +111,11 @@ react-noteapp-firebase/
 │   └── index.css       # Global styles
 ├── public/
 │   └── noteapp.png     # App icon
+├── docker/
+│   ├── Dockerfile      # Docker build instructions
+│   └── .dockerignore   # Docker ignore rules
 ├── package.json        # Dependencies and scripts
+├── docker-compose.yml  # Docker Compose configuration
 └── README.md          # Project documentation
 ```
 
@@ -100,6 +139,7 @@ The application implements full CRUD operations using Firebase:
 - Vite for fast development and building
 - ESLint for code quality
 - PostCSS for CSS processing
+- Docker for containerization
 
 ## Author
 
@@ -115,3 +155,4 @@ This project was developed as part of the Web Application Development and Securi
 - Firebase integration for real-time data storage
 - Modern web development practices
 - Responsive design principles
+- Container deployment with Docker
